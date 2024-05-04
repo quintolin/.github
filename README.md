@@ -1,3 +1,3 @@
-# Quintolin
+# Quintolin: GitHub metadata
 
-This is the fifth edition of the persistent browser-based game “Shintolin”.
+This is metadata repository for “Quintolin” organization on GitHub.
