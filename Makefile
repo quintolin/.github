@@ -3,6 +3,9 @@ SHELL := /bin/sh
 .SUFFIXES: # no special suffixes
 .DEFAULT_GOAL := default
 
+DOCKER_USER_ARGS = --user=$$(id --user):$$(id --group)
+DOCKER_IMAGE_EDITORCONFIG_CHECKER = mstruebing/editorconfig-checker:v3.0.1
+
 # dummy entry to force make to do nothing by default
 .PHONY: default
 default:
@@ -17,3 +20,8 @@ git_push_current_branch:
 .PHONY: git_push_tags
 git_push_tags:
 	git remote | xargs -L1 git push --verbose --tags
+
+# lint all files against EditorConfig settings
+.PHONY: lint_editorconfig
+lint_editorconfig:
+	docker container run --rm ${DOCKER_USER_ARGS} --volume=$$PWD:/check ${DOCKER_IMAGE_EDITORCONFIG_CHECKER}
