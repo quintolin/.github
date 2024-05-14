@@ -1,0 +1,13 @@
+name: 'lint-editorconfig'
+on:
+  workflow_call:
+permissions:
+  contents: 'read'
+jobs:
+  main:
+    name: 'lint-editorconfig'
+    runs-on: 'ubuntu-latest'
+    steps:
+      - uses: 'actions/checkout@v4'
+      - name: 'Execute `editorconfig-checker` tool'
+        uses: 'docker://mstruebing/editorconfig-checker:v3.0.1'
