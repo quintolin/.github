@@ -14,6 +14,7 @@ The fifth edition of the persistent browser-based game “Shintolin”.
 
 - [Metadata for GitHub organisation](https://github.com/quintolin/.github)
 - [Metadata for GitLab organisation](https://github.com/quintolin/gitlab-profile)
+- [Common configuration files for CI](https://github.com/quintolin/config-ci)
 
 ## Mirrors
 
